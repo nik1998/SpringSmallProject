@@ -1,6 +1,5 @@
-package com.example.project;
+package old;
 
-import com.example.project.services.GreetingService;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
