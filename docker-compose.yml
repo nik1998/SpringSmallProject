@@ -1,22 +1,17 @@
-version: '1.0'
+version: '3.8'
 services:
   postgres:
     build:
       dockerfile: Dockerfile.db
+    container_name: app
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_DB=postgres
       - POSTGRES_PASSWORD=postgres
-    volumes:
-      - "db-data:/var/lib/postgresql/data"
   app:
     build:
       dockerfile: Dockerfile.app
-    image: 'app'
     ports:
       - 8080:8080
     depends_on:
       - postgres
-
-volumes:
-  db-data:
