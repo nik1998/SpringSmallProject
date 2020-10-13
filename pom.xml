@@ -10,10 +10,10 @@
 	<description>Project for Spring</description>
 
 	<properties>
-		<java.version.compile>11</java.version.compile>
+		<java.version.compile>8</java.version.compile>
 		<java.spring.version>5.2.7.RELEASE</java.spring.version>
 		<java.jackson.version>2.11.1</java.jackson.version>
-		<maven.compiler.release>11</maven.compiler.release>
+		<maven.compiler.release>8</maven.compiler.release>
 		<postgresql.version>9.4.1212.jre7</postgresql.version>
 	</properties>
 
