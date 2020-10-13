@@ -1,17 +1,15 @@
-version: '3.8'
+version: '3.3'
 services:
-  postgres:
-    build:
-      dockerfile: Dockerfile.db
-    container_name: app
+  mypostgres:
+    image: "postgres"
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_DB=postgres
       - POSTGRES_PASSWORD=postgres
   app:
-    build:
-      dockerfile: Dockerfile.app
+    build: .
+    container_name: app
     ports:
       - 8080:8080
     depends_on:
-      - postgres
+      - mypostgres
