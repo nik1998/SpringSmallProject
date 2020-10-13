@@ -9,9 +9,12 @@ import javax.persistence.*;
 @Table(name = "users")
 public class User {
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    String id;
+    Integer id;
+    @Column(name = "name")
     String name;
+    @Column(name = "password")
     String password;
 
 }
