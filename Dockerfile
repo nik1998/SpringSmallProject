@@ -1,5 +1,4 @@
-FROM java:8
+FROM tomcat:8-jre8
 EXPOSE 8080
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+ARG WAR_FILE=target/*.war
+COPY ${WAR_FILE} /usr/local/tomcat/webapps/app.war

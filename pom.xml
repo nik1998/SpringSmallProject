@@ -5,7 +5,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>project</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<name>project</name>
 	<description>Project for Spring</description>
 
@@ -108,11 +108,15 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<!-- указываем класс с методом main -->
+							<addClasspath>true</addClasspath>
 							<mainClass>com.example.project.AppInitializer</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>3.3.1</version>
 			</plugin>
 		</plugins>
 	</build>
