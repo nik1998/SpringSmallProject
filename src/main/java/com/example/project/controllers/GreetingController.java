@@ -42,7 +42,7 @@ public class GreetingController {
         {
             System.out.println(ex.getMessage());
         }
-        return "error";
+        return "welcome";
     }
 
     @RequestMapping("/add")
