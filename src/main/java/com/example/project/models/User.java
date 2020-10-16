@@ -1,12 +1,14 @@
 package com.example.project.models;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 @Data
 @Entity
 @Table(name = "users")
+@NoArgsConstructor
 public class User {
     @Id
     @Column(name = "id")

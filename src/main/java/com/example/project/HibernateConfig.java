@@ -1,5 +1,6 @@
 package com.example.project;
 
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -12,6 +13,7 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
+import java.io.IOException;
 import java.util.Properties;
 
 @Configuration
@@ -46,7 +48,7 @@ public class HibernateConfig {
     }
 
     @Bean
-    public LocalSessionFactoryBean sessionFactory() {
+    public LocalSessionFactoryBean sessionFactory(){
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
         sessionFactory.setPackagesToScan("com.example.project");
@@ -55,9 +57,10 @@ public class HibernateConfig {
     }
 
     @Bean
-    public HibernateTransactionManager transactionManager() {
+    @Autowired
+    public HibernateTransactionManager transactionManager(final SessionFactory sessionFactory) {
         HibernateTransactionManager transactionManager = new HibernateTransactionManager();
-        transactionManager.setSessionFactory(sessionFactory().getObject());
+        transactionManager.setSessionFactory(sessionFactory);
         return transactionManager;
     }
 }
