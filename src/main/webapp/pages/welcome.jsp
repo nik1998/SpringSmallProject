@@ -6,7 +6,7 @@
 </head>
 <body>
 <p>Hello, Spring! You flag ctf{welcome}</p>
-<a href = /add>Add user</a>
+<a href = ${pageContext.request.contextPath}/add>Add user</a>
 <spring:form method="post" action="search">
     <input type = "text" name="username"/>
     <input type = "submit" value = "Search"/>
