@@ -7,6 +7,6 @@
     <title>CTF</title>
 </head>
 <body>
-<img src="${pageContext.request.contextPath}/resources/tele.jpg" alt ="Telegram is alive!"/>
+<p style="text-align: center;"><img src="${pageContext.request.contextPath}/resources/tele.jpg" alt ="Telegram is alive!"/></p>
 </body>
 </html>
