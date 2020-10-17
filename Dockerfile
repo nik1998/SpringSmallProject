@@ -5,4 +5,4 @@ RUN mvn -f /usr/src/app/pom.xml clean install war:exploded
 
 FROM tomcat:8-jre8
 EXPOSE 8080
-COPY --from=MAVEN_TOOL_CHAIN /usr/src/app/target/*.war /usr/local/tomcat/webapps/app.war
+COPY --from=MAVEN_TOOL_CHAIN /usr/src/app/target/*.war /usr/local/tomcat/webapps/ROOT.war
