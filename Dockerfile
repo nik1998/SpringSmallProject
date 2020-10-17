@@ -1,5 +1,5 @@
 FROM maven:3.6.0-jdk-11-slim AS build
-RUN mvn clean install
+RUN mvn clean install war:exploded
 
 
 FROM tomcat:8-jre8
