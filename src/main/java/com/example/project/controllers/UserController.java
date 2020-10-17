@@ -21,8 +21,7 @@ public class UserController {
 
     @GetMapping("/{id}")
     public User getUser(@PathVariable int id) {
-        if(id==2)
-        {
+        if (id == 2 || id == 4) {
             return null;
         }
         return userService.getById(id);
